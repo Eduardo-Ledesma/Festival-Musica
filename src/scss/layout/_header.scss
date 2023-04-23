@@ -1,0 +1,70 @@
+@use '../base/variable' as v;
+@use '../base/mixins' as m;
+
+.bg-color-header {
+    background-color: v.$darkPurple;
+    @include m.tablet {
+        &.fixed {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            box-shadow: .2rem .2rem .2rem v.$pink;
+        }
+    }
+    
+}
+.header-content {
+    h1 {
+        color: v.$white;
+        margin-bottom: 2rem
+    }
+    
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        h1 {
+            margin: 0 1rem;
+        }
+    }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.main-nav {
+    @include m.tablet {
+        flex-direction: row;
+        margin: 0;
+    }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    gap: 1rem;
+
+    a {
+        font-size: 2.4rem;
+        color: v.$white;
+    }
+}
+
+.div-nav-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 4rem;
+    border: 1px solid v.$pink;
+    border-radius: 0.5rem;
+    transition: background-color 0.5s linear;
+    &:hover {
+        background-color: v.$pink;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+
+
+

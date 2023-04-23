@@ -1,0 +1,11 @@
+@use '../base/variable' as v;
+
+.footer {
+padding-bottom: 2rem;
+border-top: 2px solid v.$gray;
+    footer {
+        margin-top: 2rem;
+        text-align: center;
+        color: v.$white;
+    }
+}

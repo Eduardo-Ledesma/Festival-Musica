@@ -1,0 +1,62 @@
+@use '../base/variable' as v;
+@use '../base/mixins' as m;
+
+.tickets {
+    padding: 5rem 0;
+    text-align: center;
+
+    h3, p {
+        color: v.$white;
+    }
+    h3 {
+        margin-bottom: 2rem;
+    }
+
+    .tickets-div{
+        display: grid;
+        @include m.tablet {
+            @include m.grid(2, 4rem)
+        }
+    }
+}
+
+.day-pass {
+    color: v.$white;
+    p {
+        margin: 4rem 0;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+    }
+
+    header {
+        background-color: v.$green;
+        padding: 1rem 0;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        border: 1px solid v.$purple;
+    }
+
+    .tickets-ul {
+    
+        padding: 0;
+        margin: 0;
+        li {
+            color: v.$black;
+            font-weight: bold;
+            background-color: v.$lighterGray;
+            list-style: none;
+            padding: 1rem 0;
+            border: 1px solid v.$purple;
+            text-align: left;
+            padding-left: 1rem;
+        }
+    }
+    footer {
+        background-color: v.$green;
+        border: 1px solid v.$purple;
+        padding: 1rem 0;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+}
+

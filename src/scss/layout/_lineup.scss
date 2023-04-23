@@ -1,0 +1,94 @@
+@use '../base/variable' as v;
+@use '../base/mixins' as m;
+
+.lineup-bg {
+    padding-bottom: 5rem;
+
+    .lineup {
+        border: 2px solid v.$pink;
+        transition: border .5s linear;
+        border-radius: .5rem;
+        padding: 3rem 0;
+        &:hover {
+            border: 2px solid v.$yellow;
+        }
+        h3, p {
+            text-align: center;
+            color: v.$white;
+        }
+        .day {
+            margin: 5rem 0;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.stage-container {
+    @include m.tablet {
+        @include m.grid(2, 2rem)
+    }
+    .bg-skyblue {
+        background-color: v.$skyBlue;
+        margin: 0 2rem;
+        li {
+            &:nth-child(odd) {
+                background-color: lighten(v.$skyBlue, 15%);
+            }
+        }
+    }
+    .bg-green {
+        background-color: v.$green;
+        margin: 0 2rem;
+        li {
+            &:nth-child(odd) {
+                background-color: lighten(v.$green, 15%);
+            }
+        }
+    }
+    .stage {
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        border-radius: .5rem;
+        @include m.tablet {
+            margin: 0 3rem;
+        }
+        p {
+            color: v.$white;
+            &:after {
+                content: '';
+                display: block;
+                width: 20rem;
+                height: 10rem;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin: 1rem auto 0 auto;
+                border-radius: 30rem;
+            }
+        }
+    }
+    .calendar {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            padding: 3rem 0 3rem 2rem;
+            color: v.$white;
+            font-weight: bold;
+        }
+    }
+}
+
+.edm .stage-name:after {
+    background-image: url(../img/icono_edm.png);
+}
+.rock .stage-name:after {
+    background-image: url(../img/icono_rock.png);
+}
+.bg-green .stage-name:after {
+    background-color: lighten(v.$green, 15%);
+}
+.bg-skyblue .stage-name:after {
+    background-color: lighten(v.$skyBlue, 15%);
+}
+
